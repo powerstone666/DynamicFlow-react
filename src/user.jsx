@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navuser from "./components/navuser.jsx";
 import { Link } from "react-router-dom";
+import { server } from "./main.jsx";
 
 function User() {
     const [user, setUser] = useState();
@@ -9,7 +10,7 @@ function User() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/profile",{
+                const res = await axios.get(`${server}profile`,{
                     withCredentials: true,
                 });
                 console.log(res.data.user[0].firstname);

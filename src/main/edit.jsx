@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navadmin from "../components/navadmin";
-
+import { server } from "../main";
 function Eduser() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ function Eduser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/edit/${id}`, user,{withCredentials:true});
+      await axios.put(`${server}edit/${id}`, user,{withCredentials:true});
       window.alert("Updated Successfully");
       navigate("/adminview");
     } catch (error) {
@@ -34,7 +34,7 @@ function Eduser() {
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const result = await axios.get(`http://localhost:5000/viewid/${id}`,{withCredentials:true});
+        const result = await axios.get(`${server}viewid/${id}`,{withCredentials:true});
         if (Array.isArray(result.data.use) && result.data.use.length > 0) {
           setUser(result.data.use[0]);
         } else {

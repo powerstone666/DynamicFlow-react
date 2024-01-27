@@ -3,6 +3,7 @@ import Navuser from "./components/navuser";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { server } from "./main";
 
 function Noteadd()
 {
@@ -18,7 +19,7 @@ function Noteadd()
   const submit=async(e)=>{
      e.preventDefault();
     try{
-      const res = await axios.post("http://localhost:5000/noteadd", notes, {
+      const res = await axios.post(`${server}noteadd`, notes, {
         withCredentials: true, // Correct spelling
       })
       window.alert("Note Added Successfully");

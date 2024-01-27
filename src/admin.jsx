@@ -4,6 +4,7 @@ import axios from "axios";
 import {useState} from "react";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import { server } from "./main.jsx";
 function Admin()
 {
     const notify = () => toast("Please enter correct details");
@@ -23,7 +24,7 @@ function Admin()
             return;
         }
         try{
-           const a= await axios.post("http://localhost:5000/adminlogin",user,{withCredentials:true});
+           const a= await axios.post(`${server}adminlogin`,user,{withCredentials:true});
            console.log(a);
            if(a.status===200)
            {

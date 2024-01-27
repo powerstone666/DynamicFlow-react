@@ -2,18 +2,37 @@ import Navadmin from "./components/navadmin";
 import {Link,useNavigate} from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { server } from "./main";
 function Adminview()
 {
     const[users,setUser]=useState([]);
     useEffect(() => {
        const getusers=async()=>{
-           const res=await axios.get("http://localhost:5000/adminview",{withCredentials:true});
+           const res=await axios.get(`${server}adminview`,{withCredentials:true});
            if(Array.isArray(res.data.use)){
                       setUser(res.data.use);
            }
        }
       getusers();
     }, []);
+
+    const del = async (id) => {
+      try {
+        const res = await axios.delete(`${server}delete/${id}`, {
+          withCredentials: true,
+        });
+      
+        window.confirm("Are you sure you want to delete this note?")
+      window.alert("Note Deleted Successfully");
+      window.location.href="/adminview";
+      } catch (error) {
+        console.log(error);
+        window.alert("Note Not Deleted");
+        window.location.href="/adminview";
+      }
+  }
+    
+    
 return(
     <div className="adminview">
         <Navadmin/>

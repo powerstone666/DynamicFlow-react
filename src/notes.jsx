@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Navuser from "./components/navuser";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { server } from "./main";
 function Notes()
 {
   const [notes,setNotes]=useState([]);
@@ -10,7 +11,7 @@ function Notes()
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/noteview", {
+        const res = await axios.get(`${server}noteview`, {
           withCredentials: true,
         });
         console.log(res.data);
@@ -28,7 +29,7 @@ function Notes()
 
   const del = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/notedel/${id}`, {
+      const res = await axios.delete(`${server}notedel/${id}`, {
         withCredentials: true,
       });
     

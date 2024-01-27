@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { server } from '../main';
 
 function Navuser() {
   const [user, setUser] = useState(null);
@@ -10,36 +11,35 @@ function Navuser() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/profile', {
+        const res = await axios.get(`${server}profile`, {
           withCredentials: true,
         });
-
+        
         if (res.status === 200) {
           const c = res.data.user[0];
-          const fullname = c.firstname + ' ' + c.lastname;
-          setUser(fullname); // Update the state with the data
-        } else {
+        const fullname = c.firstname + ' ' + c.lastname;
+        setUser(fullname); // Update the state with the data
+} else {
           // Handle the case where the user is not authenticated
           // Redirect to login or handle the error appropriately
           navigate('/');
         }
       } catch (e) {
         console.log(e);
-        // Handle other errors if necessary
+// Handle other errors if necessary
       }
     };
 
     fetchData();
-  }, [navigate]);
-
+  }, []);
 
   const logout = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/logout', {
+      const res = await axios.get(`${server}logout`, {
         withCredentials: true,
       });
       if (res.status === 200) {
-     
+
         navigate('/');
       }
     } catch (error) {

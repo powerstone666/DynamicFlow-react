@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { server } from "../main.jsx";
 function Noteedit()
 {
   const { id } = useParams();
@@ -15,26 +16,28 @@ function Noteedit()
   const handle=(e)=>{
     setNotes({...notes,[e.target.name]:e.target.value})
   }
+  console.log(id)
   const submit=async(e)=>{
      e.preventDefault();
     try{
-      await axios.post(`http://localhost:5000/noteedit/${id}`, notes, {
+      const res=await axios.post(`${server}noteedit/${id}`, notes, {
         withCredentials: true, // Correct spelling
       })
-      window.alert("Note Added Successfully");
+      console.log(res.data);
+      window.alert("Note Updated Successfully");
      
     }
       catch(e)
       {
         console.log(e);
-        window.alert("Note Not Added");
+        window.alert("Note Not Updated");
       }
   }
  
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/noteid/${id}`, {
+          const res = await axios.get(`${server}noteid/${id}`, {
             withCredentials: true,
           });
         

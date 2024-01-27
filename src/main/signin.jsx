@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
+import { server } from "../main";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 function Signing() {
@@ -19,13 +20,13 @@ function Signing() {
                 return;
             }
             e.preventDefault();
-            const a = await axios.post('http://localhost:5000/login', inputList, {
+            const a = await axios.post(`${server}login`, inputList, {
                 withCredentials: true,
             });
-
+            console.log(a);
           if(a.status===200)
           {
-              navigate("/user");
+             navigate("/user");
           }
           if(a.status===400){
             notify();

@@ -4,13 +4,14 @@ import { useParams } from "react-router-dom";
 import Navview from "../components/navview";
 import {Link} from "react-router-dom";
 import Navuser from "../components/navuser";
+import { server } from "../main";
 function V() {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/profile", {
+        const res = await axios.get(`${server}profile`, {
           withCredentials: true,
         });
         console.log(res.data);

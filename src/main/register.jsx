@@ -3,6 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
+import { server } from "../main";
 function Register()
 {
     const notify = () => toast("User Alredy Exist");
@@ -22,7 +23,7 @@ function Register()
             if (!firstname && !lastname && !email && !password){
                 return;
             }
-          const a=  await axios.post("http://localhost:5000/register", input);
+          const a=  await axios.post(`${server}register`, input);
           console.log(a);
         } catch (e) {
             console.log(e);
