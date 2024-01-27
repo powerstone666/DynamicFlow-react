@@ -1,0 +1,1093 @@
+/* Reset styles with normalize.css */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
+   overflow: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-decoration: none;
+    outline: none;
+}
+
+.landing{
+    margin: 0;
+    padding: 0;
+}
+
+#nav{
+    background-color:darkgreen;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+#sig{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -60px;
+}
+.sing{
+    background:url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+    background-size: cover;
+    height: 1000px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+.si{
+    width: 50%;
+    background:url("https://wallpapercave.com/wp/wp4075047.jpg");
+    height: 1000px;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+
+}
+
+#btnn{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    width:380px;
+    height: 60px;
+    position: relative;
+    right:-780px;
+    top:0px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background: rgba(0, 0, 0, 0.5);
+
+
+}
+#a{
+    width: 50%;
+    text-align: center;
+
+}
+#a h1{
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+   color: inherit;
+   text-decoration: none;
+   outline: none;
+}
+#b{
+
+    width: 50%;
+    text-align: center;
+}
+#b h1{
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+.formm{
+    background-color:white;
+    margin-top: 120px;
+    height: 500px;
+    width: 400px;
+    border-radius:10px ;
+    opacity:1;
+    z-index: 1;
+
+}
+.formm input{
+    margin: 20px;
+    height:50px;
+    width: 280px;
+    opacity: 1;
+    border-radius: 10px;
+    border:2px solid black;
+    outline: none;
+    padding: 10px;
+    color: darkgreen;
+}
+.formm input:focus{
+    border-color: darkgreen;
+}
+.formm h1{
+    font-weight: bolder;
+    color: darkgreen;
+    text-decoration: none;
+    outline: none;
+}
+#subbtn{
+    width: 100px;
+    border-color: darkgreen;
+}
+#subbtn:hover{
+    background-color: darkgreen;
+    color: white;
+}
+.containerr{
+    margin: 0;
+    display: flex;
+    padding: 0;
+   background-color: black;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.rightt {
+    position: relative;
+    background-color: darkgreen; /* Right div background color */
+    height: 100%;
+    flex: 1;
+}
+
+.rightt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent 50%, black 50%);
+    pointer-events: none; /* Make the slanted divider non-interactive */
+}
+.rightt img
+{
+    position: relative;
+    right: -20px;
+    top: 10px;
+    width: 400px;
+    height: 600px;
+}
+#jun{
+   top: -250px;
+  right: -1500px;
+}
+#not{
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/43/657/286/video-games-ultrawide-ultra-wide-shadow-of-the-tomb-raider-wallpaper-5fa5727caeb6bc0b65bcb87221b1d464.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+.add{
+    background-image: url(https://cdn.pixabay.com/photo/2019/04/06/05/17/wallpaper-4106667_1280.jpg);
+    background-size: cover;
+    height: 1000px;
+    width: 100%;
+}
+.imran{
+    display: flex;
+}
+.imran button{
+    height: 40px;
+    margin: 0;
+    position: relative;
+    right: -1400px;
+    margin-top: 20px;
+}
+
+.imm{
+    display: inline-block;
+    z-index: 20;
+    padding: 100px;
+}
+.junaid{
+    display: flex;
+}
+#junn{
+    position: relative;
+    right: -600px;
+}
+.navu{
+    height: 100px;
+    width: 100%;
+    background:white;
+    border-bottom: 8px solid whitesmoke;
+    display: flex;
+}
+.ty{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-left: 850px;
+    padding: 20px;
+    color:darkgreen;
+}
+.userr{
+    background: url("https://wallpaperaccess.com/full/748076.jpg");
+    height: 1000px;
+    background-size: cover;
+}
+
+.navu img{
+    position: fixed;
+    height: 100px;
+    margin-left: 1780px;
+    padding: 20px;
+    cursor: pointer;
+}
+.navu h1{
+    position: fixed;
+    margin-left: 1650px;
+    padding: 30px;
+    color: darkgreen;
+    text-decoration: none;
+    outline: none;
+}
+.view{
+    height: 120px;
+    background: white;
+    width: 200px;
+    transition:ease 10s;
+    position: relative;
+    right: -5%;
+    cursor: pointer;
+    display: none;
+}
+.view h1:hover{
+    color: darkgreen;
+}
+.mai{
+    height: 200px;
+    width: 840px;
+    background:transparent;
+    position: fixed;
+    top: 60%;
+    left: 30%;
+    display: flex;
+    padding:50px;
+}
+.note{
+    height: 120px;
+    width: 240px;
+    background:yellow;
+    position: relative;
+    border: 10px solid black;
+   right: -30%;
+   display: flex;
+    cursor: pointer;
+
+}
+.chat{
+    height: 120px;
+    width: 240px;
+    background: rebeccapurple;
+    position: relative;
+   display: flex;
+    border: 10px solid black;
+    justify-items: center;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.chat h1{
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.chat:hover h1{
+    display: none;
+}
+#go{
+    padding: 10px;
+    display: none;
+}
+.chat:hover #go{
+    display: block;
+}
+
+.note h1{
+    padding: 20px;
+    color: black;
+    font-weight: bolder;
+
+}
+.note:hover h1{
+    display: none;
+}
+.note:hover #go{
+    display: block;
+}
+.bott{
+    min-height:100vh;
+    display: flex;
+
+}
+.sidebar{
+    flex: 2;
+    border-right:2px solid rebeccapurple;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: darkgreen;
+
+}
+.bott{
+    background: url("https://images.hdqwalls.com/download/king-lion-dv-2560x1440.jpg");
+    background-size: cover;
+}
+.mainn{
+    flex: 9;
+    min-height: calc(100vh - 14rem);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 100px;
+    margin-bottom: 0;
+    background-color: transparent;
+}
+.logoo{
+    height: 60px;
+    margin-right: 10px;
+
+}
+.brand{
+    font-size: 30px;
+    color: darkgreen;
+    font-weight: bold;
+
+
+}
+.uppersidetop{
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    color: darkgreen;
+}
+.upperside{
+    padding: 20px;
+    border-bottom: 2px solid black;
+    height: 70%;
+    color: darkgreen;
+
+}
+.addbtn{
+    height: 20px;
+    width: 30px;
+    padding-right: 10px;
+}
+#midbtn{
+    font-size: 15px;
+    width:350px;
+    height: 60px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5A4BFF;
+}
+#midbtn:hover{
+    background: darkgreen;
+}
+#query{
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    padding: 15px;
+    width:350px;
+    height: 60px;
+    background: transparent;
+    margin: 10px auto;
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    color: darkgreen;
+}
+#iii{
+    height: 40px;
+
+    padding-right: 20px;
+}
+.lowerrside {
+    padding: 20px;
+}
+.listitem{
+    margin: 7px;
+    align-items: center;
+    font-size: 25px;
+    color: darkgreen;
+}
+.listitemimg{
+    height: 80px;
+    margin: 10px;
+    padding: 15px;
+    color: darkgreen;
+}
+.chatfooter{
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.in{
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+.send img{
+    height: 40px;
+}
+.in textarea{
+    width: 750px;
+    height: 30px;
+    padding: 10px;
+    outline: none;
+    color: darkgreen;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: transparent transparent; /* Firefox */
+
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    resize: vertical;
+}
+.in input::placeholder{
+    color: darkgreen;
+}
+
+.in textarea,.send{
+    background: transparent;
+    border: none;
+}
+.chats {
+     overflow: hidden;
+     overflow-y: scroll;
+     scroll-behavior: smooth;
+     width: 100%;
+     max-width: 700px;
+     height: calc(100vh - 170px);
+
+     /* Hide scrollbar for modern browsers */
+     scrollbar-width: thin; /* Firefox */
+     scrollbar-color: transparent transparent; /* Firefox */
+
+     /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+     &::-webkit-scrollbar {
+         width: 0.5em;
+     }
+
+     &::-webkit-scrollbar-thumb {
+         background-color: transparent;
+     }
+ }
+ #notee {
+    overflow: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    resize: none;
+    scroll-behavior: smooth;
+
+    /* Hide scrollbar for modern browsers */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: transparent transparent; /* Firefox */
+
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
+.ch{
+    display: flex;
+    margin: 10px;
+    padding: 20px 30px;
+    font-size: 14px;
+    align-items: flex-start;
+    color: white;
+    text-align: justify;
+    background: rgba(28,30,58,0.3);
+}
+.ch img{
+    object-fit: cover;
+    height: 70px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.boo{
+    background: rgba(28,30,58,0.6);
+    width: fit-content;
+    border-radius: 10px;
+}
+.txt{
+    line-height: 25px;
+    color: rgba(222,222,222,1);
+}
+.adminview{
+height: 1000px;
+width: 100%;
+background-image: url("https://wallpapercave.com/wp/wp5052190.jpg");
+background-repeat: no-repeat;
+}
+#view{
+    background-image: url("https://wallpapercave.com/wp/wp5177902.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+#card{
+    background-color:white;
+    opacity: 0.8;
+    width: 50%;
+    height: 40%;
+    justify-content: center;
+    padding-top: 50px;
+    text-align: center;
+    position: relative;
+    top: 25%;
+    left: 20%;
+    border-radius: 30px;
+  
+    font-weight:bolder ;
+    color: darkgreen;
+}
+#lll {
+    color: black;
+  }
+  #nott{
+    height: 100vh;
+    background: url(https://coolwallpapers.me/picsup/2622425-ark-park-4k-wallpaper-free-hd-widescreen.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+#edii{
+    height: 1000px;
+    background-image: url(https://cdn.pixabay.com/photo/2018/04/20/01/15/fantasy-3334834_1280.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.forme{
+        background-color:white;
+        margin-top: 120px;
+        height: 600px;
+        width: 400px;
+        border-radius:10px ;
+        opacity:1;
+        z-index: 1;
+    
+    }
+    .forme input{
+        margin: 20px;
+        height:50px;
+        width: 280px;
+        opacity: 1;
+        border-radius: 10px;
+        border:2px solid black;
+        outline: none;
+        padding: 10px;
+        color: darkgreen;
+    }
+    .forme input:focus{
+        border-color: darkgreen;
+    }
+    .forme h1{
+        font-weight: bolder;
+        color: darkgreen;
+        text-decoration: none;
+        outline: none;
+    }
+.foot{
+    height: 100px;
+    width: 100%;
+    background-color: darkgreen;
+    border: 2px solid black;
+    z-index: 1000;
+    position: relative;
+    top: -470px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    display: none;
+}
+.chatfooter p{
+    font-size: 20px;
+    margin:20px 0px;
+    font-size:20px;
+    color: whitesmoke;
+   }
+#bbb{
+    display: none;
+}
+#can{
+    display: none;
+}
+#mel{
+    font-size: 60px;
+}
+.agr{
+    display: none;
+}
+.fooot{
+    height: 100px;
+    width: 100%;
+    background-color: darkgreen;
+    border: 2px solid black;
+    z-index: 1000;
+    position: relative;
+    top: -470px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    display: none;
+}
+#col{
+    margin: 30px;
+    height: 250px;
+}
+#col h1{
+    margin: 0px;
+}
+#col p{
+    margin: 0px;
+}
+#coll {
+    height: 530px;
+    margin: 30px;
+    white-space: pre-line;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: auto; /* Add overflow property to enable scrolling if content exceeds height */
+}
+#coll input{
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid green;
+    color: green;
+    opacity: 0.8;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#coll textarea {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    opacity: 0.8;
+    color: green;
+   border: none;
+   border-radius: 10px;
+    outline: none;
+    padding: 10px;
+     /* Use pre-wrap to start a new line when the text reaches the end */
+}
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+    gap: 20px;
+    max-height: calc(100vh - 220px); /* Adjust the value based on your layout */
+    overflow-y: auto;
+
+    /* Hide scrollbar for modern browsers */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: transparent transparent; /* Firefox */
+
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    -webkit-overflow-scrolling: touch;
+}
+
+.notes-grid::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.notes-grid::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+.notes-grid {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.notes-item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    background-color:white;
+    opacity:0.8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        
+    }
+
+    .si {
+        display: none;
+    }
+
+    .sing {
+        width: 100%;
+    }
+    .notes-grid {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+
+.notes-grid::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.notes-grid::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+.notes-grid {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.notes-item {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+    #btnn {
+        position: relative;
+        left: 80px;
+        width: 60%;
+        padding: 5px;
+    }
+
+    #a {
+        width: 30%;
+        margin-right: 30px;
+    }
+
+    #b {
+        width: 30%;
+    }
+
+    #a h1 {
+        font-size: 25px;
+    }
+
+    #b h1 {
+        font-size: 25px;
+    }
+
+    .forme {
+        position: relative;
+        top: -50px;
+        width: 80%;
+        height: 530px; /* Set the height to 0 */
+    }
+
+    .forme input {
+        margin: 10px;
+    }
+
+    .formm {
+        width: 80%;
+        height: 450px; /* Set the height to 0 */
+        position: relative;
+        top: -10px;
+    }
+    #mel{
+        position: relative;
+        left: -800px;
+      
+    }
+    #dflex{
+        display: none;
+        
+    }
+    #dflex button{
+        display: none;
+    }
+    .foot{
+        display: block;
+      
+    }
+    .chat{
+        position: relative;
+        top: -290px;
+        left: -150px;
+    }
+    .note{
+        position: relative;
+        top: -10px;
+        left: -300px;
+    }
+    .navu h1{
+        font-size: 20px;
+       top: 30px;
+       left: -110px;
+       
+    }
+    .navu img{
+        height: 80px;
+    }
+    .ty{
+        position: relative;
+        font-size: 30px;
+        left: 120px;
+        margin-left: 0;
+    }
+   .sidebar{
+    display: none;
+   }
+   .mainn{
+    width: 100%;
+   position: relative;
+   top: -10px;
+   
+   }
+   #card{
+    width: 310px;
+    position: relative;
+    left: 30px;
+    top: 180px;
+   
+   }
+   .chats{
+    position: relative;
+    top: 30px;
+    left: -100px;
+    width: 400px;
+   }
+   .in{
+  
+    position: relative;
+    left: -95px;
+    width: 350px;
+    top: -30px;
+   }
+   .in textarea{
+    width: 290px;
+    position: relative;
+  
+    resize: none;
+   }
+   .in textarea::placeholder {
+   padding: 10px;
+    /* Adjust the color as needed */
+  }
+   .in img{
+    position: relative;
+    top: -8px;
+    left: 0px;
+   }
+   .chats img{
+    position: relative;
+   height: 30px;
+   }
+   .chats p{
+    font-size: 12px;
+   }
+   .chatfooter p{
+    font-size: 12px;
+    position: relative;
+    left: -70px;
+   
+    display: none;
+   }
+   .chatfooter {
+    position: relative;
+    top: 10px;
+   }
+   .chatfooter textarea{
+    height:30px ;
+   }
+  
+   #bbb{
+    display: block;
+}
+.uppersidetop{
+    position: relative;
+    top:150px;
+}
+#midbtn{
+    position: relative;
+    top: 120px;
+}
+.uppersidebottom{
+    position: relative;
+    top: 120px;
+}
+#can{
+    display: block;
+}
+.fooot{
+    display: block;
+    position: relative;
+    top: 30px;
+}
+#notee{
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    max-width: 700px;
+    height: calc(100vh - 170px);
+
+    /* Hide scrollbar for modern browsers */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: transparent transparent; /* Firefox */
+
+    /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        width: 0.5em;
+    }
+   
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
+#col{
+    
+    width: 340px;
+}
+
+}
+
+@media screen and  (max-width: 360px) {
+    body {
+        overflow-x: scroll;
+      
+        height: 600px;
+    }
+    #card{
+        width: 310px;
+       
+       }
+
+    .si {
+        display: none;
+    }
+  
+    .sing {
+        width: 100%;
+    }
+
+    #btnn {
+        position: relative;
+        display: none;
+    }
+
+   
+
+    #a h1 {
+        font-size: 25px;
+    }
+
+    #b h1 {
+        font-size: 25px;
+    }
+
+    .forme {
+        position: relative;
+        top: -110px;
+        width: 80%;
+        height: 450px; /* Set the height to 0 */
+    }
+
+    .forme input {
+        margin: 5px;
+        width: 80%;
+    }
+
+    .formm {
+        width: 80%;
+        height: 390px; /* Set the height to 0 */
+        position: relative;
+        top: -90px;
+      
+    }
+    .formm input{
+        width: 80%;
+    }
+    #mel{
+        position: relative;
+        left: -800px;
+      
+    }
+    #dflex{
+        display: none;
+        
+    }
+    #dflex button{
+        display: none;
+    }
+    .foot{
+        display: block;
+        position: relative;
+        top:-630px ;
+    }
+  #nav{
+    height: 120px;
+  }
+    #mel{
+        font-size: 30px;
+        position: relative;
+        top: -25px;
+    }
+    .agr{
+        display:block ;
+    }
+   .fooot{
+    display: block;
+    position: relative;
+    top: -580px;
+    background: transparent;
+    border: none;
+   }
+  #subbtn{
+    position: relative;
+    top: 0px;
+  }
+  #pp{
+    position: relative;
+    top: -25px;
+  }
+  .chat{
+    position: relative;
+    top:-180px;
+   
+   }
+   .uppersidetop{
+    position: relative;
+    left: -10px;
+}
+#midbtn{
+   width: 300px;
+}
+#query{
+    width: 300px;
+   position: relative;
+   left: -26px;
+   top: -25px;
+}
+
+}
