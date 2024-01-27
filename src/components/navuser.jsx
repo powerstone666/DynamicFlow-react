@@ -33,20 +33,18 @@ function Navuser() {
     fetchData();
   }, []);
 
-  const logout = async () => {
-    try {
-      const res = await axios.get(`${server}logout`, {
-        withCredentials: true,
-      });
-      if (res.status === 200) {
-
-        navigate('/');
-      }
+  const logout = async (e) => {
+    e.preventDefault();
+      try {
+        const res = await axios.post(`${server}logout`, null, {
+          withCredentials: true,
+        });
+        console.log(res.data);
+     window.location.href="/";
     } catch (error) {
       console.log(error);
     }
   };
-
   const [text] = useTypewriter({
     words: ['Welcome to', 'DynamicFlow'],
     loop: true, // Loop the animation
@@ -91,7 +89,7 @@ function Navuser() {
     <Link to="/view" style={{ textDecoration: "none", outline: "none" }}>
       <h1 style={{ fontSize: '20px', padding: '30px', margin: 0 }} id="lll">View Profile</h1>
     </Link>
-    <Link to="/">
+  
       <button
         className="btn btn-outline-danger"
         style={{ position: 'relative', top: '-25px' }}
@@ -99,7 +97,7 @@ function Navuser() {
       >
         Log-Out
       </button>
-    </Link>
+    
   </center>
 </div>
 
