@@ -6,8 +6,8 @@ import {useState} from 'react';
 
 
 
-export const server="https://dynamicflow.onrender.com/";
-//export const server="http://localhost:5000/";
+//export const server="https://dynamicflow.onrender.com/";
+export const server="http://localhost:5000/";
 
 export const Context = createContext({isAuthenticated:false,isAdmin:false,loading:false});
 

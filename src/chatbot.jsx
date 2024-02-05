@@ -28,7 +28,7 @@ function Chatbot()
         try {
             // Assuming `run` is an asynchronous function, you should wait for its completion.
             const response = await run(input);
-            console.log(response)
+          
 
             setMessage([
                 ...message,

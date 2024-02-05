@@ -92,7 +92,7 @@ function Notes()
       <h1>{notee.title}</h1>
       <p>{notee.note}</p>
     
-      <div class="card-footer text-body-secondary">
+      <div className="card-footer text-body-secondary">
      <ul className="nav justify-content-center">
      <li className="nav-item">
         <Link to={`/noteedit/${notee.note_id}`} className="nav-link">
@@ -101,7 +101,7 @@ function Notes()
     </li>
   <li className="nav-item">
    
-    <a className="nav-link" href="#"><button className="button" class="btn btn-danger" onClick={()=>del(notee.note_id)}>DELETE</button></a>
+    <a className="nav-link" href="#"><button className="button btn btn-danger" onClick={()=>del(notee.note_id)}>DELETE</button></a>
     
   </li>
 </ul>
