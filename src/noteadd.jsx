@@ -4,9 +4,32 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { server } from "./main";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Noteadd()
 {
+  const notify = (a) => toast.success(a, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light"
+  
+    });
+    const warn = (a) => toast.error(a, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    
+      });
   const [notes,setNotes]=useState({
     title:"",
     note:""
@@ -19,16 +42,22 @@ function Noteadd()
   const submit=async(e)=>{
      e.preventDefault();
     try{
-      const res = await axios.post(`${server}noteadd`, notes, {
-        withCredentials: true, // Correct spelling
-      })
-      window.alert("Note Added Successfully");
-     
-    }
+      if(!title && !note){
+
+        warn("Please fill all the fields");
+      }
+    
+   
+else{
+    const res = await axios.post(`${server}noteadd`, notes, {
+      withCredentials: true, // Correct spelling
+    })
+    notify("Note Added Successfully");
+  }
+}
       catch(e)
       {
-        console.log(e);
-        window.alert("Note Not Added");
+       warn(e.response)
       }
   }
  
@@ -61,6 +90,7 @@ function Noteadd()
     </div>
   
   </div>
+  <ToastContainer/>
 </div>
 </div>
     );

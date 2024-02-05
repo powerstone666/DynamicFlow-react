@@ -6,7 +6,28 @@ import { Link } from "react-router-dom";
 import { server } from "../main";
 function Register()
 {
-    const notify = () => toast("User Alredy Exist");
+    const notify = (a) => toast.error(a, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+      
+        });;
+        const success = (a) => toast.success(a, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+          
+            });;
     const [input, setInput] = useState({
         firstname: "",
         lastname: "",
@@ -24,10 +45,10 @@ function Register()
                 return;
             }
           const a=  await axios.post(`${server}register`, input);
-          console.log(a);
+         success("Registered Successfully");
         } catch (e) {
-            console.log(e);
-            const notify = () => toast("Please enter correct details");
+            console.log(e.response.data.message);
+           notify(e.response.data.message);
         }
     }
 

@@ -3,7 +3,8 @@ import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { server } from '../main';
-
+import { useContext } from 'react';
+import { Context } from '../main';
 function Navuser() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -36,11 +37,16 @@ function Navuser() {
   const logout = async (e) => {
     e.preventDefault();
       try {
-        const res = await axios.post(`${server}logout`, null, {
+        // remove user from local storage
+        localStorage.removeItem("user"); 
+        setUser(null);
+
+        await axios.post(`${server}logout`, null, {
           withCredentials: true,
         });
-        console.log(res.data);
-     window.location.href="/";
+
+        window.location.reload();
+        
     } catch (error) {
       console.log(error);
     }
@@ -50,6 +56,7 @@ function Navuser() {
     loop: true, // Loop the animation
     // Adjust type speed as needed
   });
+
 
   const [view, setView] = useState('no');
 

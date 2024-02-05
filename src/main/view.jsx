@@ -7,7 +7,6 @@ import Navuser from "../components/navuser";
 import { server } from "../main";
 function V() {
   const [user, setUser] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -1,11 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../main";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { Context } from "../main";
+import 'react-toastify/dist/ReactToastify.css';
 function Signing() {
-    var log=false
+ 
+    const notify = (a) => toast.error(a, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+      
+        });
+        const success = (a) => toast.success(a, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light"
+          
+            });;
+
+
+
+const {setIsAuthenticated,loading,setLoading}=useContext(Context);
     const [inputList, setInputList] = useState({email: "", password: "" });
     const [user, setUser] = useState("");
     const { email, password } = inputList;
@@ -13,7 +40,7 @@ function Signing() {
     const inchange = (e) => {
         setInputList({ ...inputList, [e.target.name]: e.target.value });
     };
-    const notify = () => toast("Please enter correct details");
+  
     const onsubmit = async (e) => {
         try {
             if ( !email && !password){
@@ -26,16 +53,33 @@ function Signing() {
             console.log(a);
           if(a.status===200)
           {
-             navigate("/user");
-          }
-          if(a.status===400){
-            notify();
-          }
-        } catch (e) {
-            console.log(e);
-            notify();
+            success("Logged In Successfully");
+            // setIsAuthenticated(true);
+
+            // changes made by ankit
+            
+            // get user details after login and save in local storage 
+            const res = await axios.get(`${server}profile`, {
+                withCredentials: true,
+            }).then(res=>{
+                console.log(res.data);
+                setUser(res.data.user[0]);
+                localStorage.setItem("user", JSON.stringify(res.data.user[0])); 
+                setIsAuthenticated(true);
+            });
         }
+        if(a.status===400){
+            notify(a.data.message);
+        }
+        } catch (e) {
+          
+            console.log(e);
+           notify(e.response.data.message);
+          
+        }
+        notify();
     }
+             
 
     return (
         <div id="sig">

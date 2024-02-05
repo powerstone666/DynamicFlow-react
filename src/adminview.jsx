@@ -3,8 +3,34 @@ import {Link,useNavigate} from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { server } from "./main";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useReducer } from "react";
 function Adminview()
 {
+  const [reducerValue,forceUpdate]=useReducer(x=>x+1,0);
+  const notify = (a) => toast.success(a, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light"
+  
+    });
+    const warn = (a) => toast.error(a, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    
+      });
     const[users,setUser]=useState([]);
     useEffect(() => {
        const getusers=async()=>{
@@ -14,21 +40,22 @@ function Adminview()
            }
        }
       getusers();
-    }, []);
+    }, [reducerValue]);
 
     const del = async (id) => {
       try {
+        if(window.confirm("Are you sure you want to delete this note?"))
+        {
         const res = await axios.delete(`${server}delete/${id}`, {
           withCredentials: true,
         });
-      
-        window.confirm("Are you sure you want to delete this note?")
-      window.alert("Note Deleted Successfully");
-      window.location.href="/adminview";
+        forceUpdate();
+        notify("Note Deleted Successfully");
+       
+      }
+     
       } catch (error) {
-        console.log(error);
-        window.alert("Note Not Deleted");
-        window.location.href="/adminview";
+       warn(error.response);
       }
   }
     
@@ -68,9 +95,11 @@ return(
             </div>
           </td>
         </tr>
+      
       ))}
     </tbody>
   </table>
+  <ToastContainer/>
 </div>
 
     </div>

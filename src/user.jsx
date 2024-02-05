@@ -3,9 +3,16 @@ import axios from "axios";
 import Navuser from "./components/navuser.jsx";
 import { Link } from "react-router-dom";
 import { server } from "./main.jsx";
+import { useContext } from "react";
+import { Context } from "./main.jsx";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function User() {
     const [user, setUser] = useState();
+   const navigate=useNavigate();
+    const {isAuthenticated}=useContext(Context);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,7 +20,7 @@ function User() {
                 const res = await axios.get(`${server}profile`,{
                     withCredentials: true,
                 });
-                console.log(res.data.user[0].firstname);
+               
                 setUser(res.data.user[0]);  // Update the state with the data
             } catch (e) {
                 console.log(e);

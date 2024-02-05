@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Navadmin from "../components/navadmin";
 import { server } from "../main";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Eduser() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,7 +13,28 @@ function Eduser() {
     lastname: "",
     email: "",
   });
-
+  const notify = (a) => toast.success(a, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light"
+  
+    });
+    const warn = (a) => toast.error(a, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    
+      });
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -24,10 +47,10 @@ function Eduser() {
     e.preventDefault();
     try {
       await axios.put(`${server}edit/${id}`, user,{withCredentials:true});
-      window.alert("Updated Successfully");
+      notify("User Updated Successfully");
       navigate("/adminview");
     } catch (error) {
-      console.error("Error updating user:", error);
+     warn(error.response.data.message);
     }
   };
 
@@ -38,10 +61,10 @@ function Eduser() {
         if (Array.isArray(result.data.use) && result.data.use.length > 0) {
           setUser(result.data.use[0]);
         } else {
-          console.error("Invalid response format from the server");
+         warn("No user found");
         }
       } catch (error) {
-        console.error("Error fetching user:", error);
+       warn(error.response);
       }
     };
 
@@ -83,6 +106,7 @@ function Eduser() {
                 onChange={(e) => handleChange(e)}
               />
             </div>
+            <ToastContainer/>
             <div className="mb-3">
               <label className="form-label" htmlFor="email">
                 Email

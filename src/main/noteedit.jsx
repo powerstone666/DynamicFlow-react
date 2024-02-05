@@ -1,12 +1,37 @@
 import React, { useEffect } from "react";
 import Navuser from "../components/navuser.jsx";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { server } from "../main.jsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Noteedit()
 {
+  const navigate=useNavigate();
+  const notify = (a) => toast.success(a, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light"
+  
+    });
+    const warn = (a) => toast.error(a, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    
+      });
   const { id } = useParams();
   const [notes,setNotes]=useState({
     title:"",
@@ -16,22 +41,21 @@ function Noteedit()
   const handle=(e)=>{
     setNotes({...notes,[e.target.name]:e.target.value})
   }
-  console.log(id)
+ 
   const submit=async(e)=>{
      e.preventDefault();
     try{
       const res=await axios.post(`${server}noteedit/${id}`, notes, {
         withCredentials: true, // Correct spelling
       })
-      console.log(res.data);
-      window.alert("Note Updated Successfully");
+     notify("Note Updated Successfully");
      
     }
       catch(e)
       {
-        console.log(e);
-        window.alert("Note Not Updated");
-      }
+       
+warn(e.response);     
+ }
   }
  
     useEffect(() => {
@@ -44,14 +68,34 @@ function Noteedit()
           if (Array.isArray(res.data.use) && res.data.use.length > 0) {
             // Set default values to prevent undefined
             setNotes(res.data.use[0]);
-            console.log(notes);
+            
           }
         } catch (e) {
-          console.error(e);
+         warn(e.response);
         }
       };
       fetchData();
     }, [id]);
+    const del = async () => {
+     
+      if(window.confirm("Are you sure you want to delete this note?"))
+      {
+      try {
+        const res = await axios.delete(`${server}notedel/${id}`, {
+          withCredentials: true,
+        });
+    
+     notify("Note Deleted Successfully");
+     navigate("/notes")
+     
+      } catch (error) {
+  
+      warn("Note Not Deleted");
+       
+      }
+    }
+  }
+  
     return(
         <div id="not">
         <Navuser/>
@@ -70,9 +114,9 @@ function Noteedit()
      <li className="nav-item">
     <a className="nav-link" href="#"><button className="button" class="btn btn-primary" type="submit">SAVE</button></a>
   </li>
-
+  <ToastContainer/>
   <li className="nav-item">
-    <a className="nav-link" href="#"><button className="button" class="btn btn-danger">DELETE</button></a>
+    <a className="nav-link" href="#"><button className="button" class="btn btn-danger" onClick={del}>DELETE</button></a>
   </li>
   <li className="nav-item">
     <Link to="/notes" className="nav-link" href="#"><button className="button btn btn-success">HOME</button></Link>

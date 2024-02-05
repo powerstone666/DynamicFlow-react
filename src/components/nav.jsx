@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 function Nav()
 {
     return(
-        <div>
-            <nav className="navbar navbar-light " id="nav">
+        <div>  <nav className="navbar navbar-expand-lg navbar-light" id="nav">
                 <div className="container-fluid">
                     <center>
                         <a className="navbar-brand text-black" style={{marginLeft:"800px"}} id="mel">WEL<span style={{color:"aquamarine"}}>COME</span></a>

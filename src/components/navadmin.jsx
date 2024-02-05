@@ -1,20 +1,23 @@
 import {Link,useNavigate} from "react-router-dom";
 import axios from "axios";
 import { server } from "../main";
+import { useState, useEffect } from "react";
 function Navadmin()
 {
     const navigate = useNavigate();
-
+   const [isAdmin, setIsAdmin] = useState(null);
     const logout = async (e) => {
       e.preventDefault();
         try {
+          localStorage.removeItem("isAdmin"); 
+          setIsAdmin(null);
           const res = await axios.post(`${server}logout`, null, {
             withCredentials: true,
           });
-          console.log(res.data);
-       window.location.href="/";
+        
+       window.location.reload();
       } catch (error) {
-        console.log(error);
+       console.log(error);
       }
     };
    

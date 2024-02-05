@@ -16,6 +16,7 @@
     "dotenv": "^16.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.1",
     "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^10.0.4",

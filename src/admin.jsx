@@ -5,15 +5,28 @@ import {useState} from "react";
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
 import { server } from "./main.jsx";
+import { useContext } from "react";
+import { Context } from "./main.jsx";
 function Admin()
 {
-    const notify = () => toast("Please enter correct details");
+    const notify = (a) => toast.error(a, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+      
+        });
     const navigate=useNavigate();
     const [user,setUser]=useState({
         email:"",
         password:""
     });
     const {email,password}=user;
+    const [isAdmin,setIsAdmin]=useState(" ");
     const handle=(e)=>{
         setUser({...user,[e.target.name]:e.target.value})
     }
@@ -28,14 +41,23 @@ function Admin()
            console.log(a);
            if(a.status===200)
            {
-              navigate("/adminview");
+                // get user details after login and save in local storage 
+            const res = await axios.get(`${server}adminprofile`, {
+                withCredentials: true,
+            }).then(res=>{
+                console.log(res.data.info);
+                setIsAdmin(res.data.info[0]);
+               console.log(isAdmin);
+                localStorage.setItem("isAdmin", JSON.stringify(res.data.info[0])); 
+                window.location.reload();
+            });
            }
           
         }
         catch(e)
         {
-            console.log(e);
-            notify();
+          
+            notify(e.response.data.message);
         }
     }
     return(
