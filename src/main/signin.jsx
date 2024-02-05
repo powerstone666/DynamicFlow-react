@@ -65,7 +65,7 @@ const {setIsAuthenticated,loading,setLoading}=useContext(Context);
                 console.log(res.data);
                 setUser(res.data.user[0]);
                 localStorage.setItem("user", JSON.stringify(res.data.user[0])); 
-                setIsAuthenticated(true);
+               window.location.reload();
             });
         }
         if(a.status===400){
