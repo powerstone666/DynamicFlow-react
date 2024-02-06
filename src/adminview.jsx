@@ -63,7 +63,7 @@ function Adminview()
 return(
     <div className="adminview">
         <Navadmin/>
-        <div className="table-responsive">
+        <div className="table-responsive" style={{overflowY:scroll}}>
   <table className="table border shadow" align="center" style={{ opacity: "0.8" }}>
     <thead className="text-center">
       <tr>
