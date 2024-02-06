@@ -93,28 +93,14 @@ function Chatbot()
             ]);
         }
         };
-        const see=()=>{
-            if(s===false)
-            {
-                se(true);
-                document.getElementById("see").style.display="block";
-            }
-            if(s===true)
-            {
-                se(false);
-                document.getElementById("see").style.display="none";
-            }
-        }
-        const cancel=()=>{
-            document.getElementById("see").style.display="none";
-        }
+    
     return(
         <div className="bott">
            <div className="sidebar" id="see">
                <div className="upperside">
               
                    <div className="uppersidetop">
-                   <button style={{border:"none",background:"transparent",top:"-40px",position:"relative",right:"30px"}} id="can" onClick={cancel}><img src="https://cdn-icons-png.flaticon.com/128/5735/5735775.png" style={{height:"40px"}}></img></button>
+
                        <img src="https://cdn-icons-png.flaticon.com/128/3050/3050874.png" className="logoo"/>
                        <span className="brand" >DynamicFlow</span>
                    </div>
@@ -129,7 +115,7 @@ function Chatbot()
                </div>
            </div>
             <div className="mainn">
-                <button id="bbb" style={{border:"none",background:"transparent",position:"relative",left:"-260px",top:"30px",margin:"0"}} onClick={see} ><img src="https://cdn-icons-png.flaticon.com/128/9343/9343683.png" style={{height:"30px"}}></img></button>
+            <Link to="/user">  <button style={{border:"none",background:"transparent",position:"relative",left:"-260px",top:"30px",margin:"0"}}  id="bbb"  onClick={cancel}><img src="https://cdn-icons-png.flaticon.com/128/5735/5735775.png" style={{height:"40px"}}></img></button></Link>
                 <div className="chats">
                     {message.map((mess, i) =>
                         <div key={i} className={mess.isbot ? "ch boo" : "ch"}>
@@ -142,7 +128,7 @@ function Chatbot()
                 <div className="chatfooter">
                     <div className="in">
                         <textarea type={"text"} placeholder="Enter a Message" value={input} onKeyDown={handleClick} onChange={(e)=>{setInput(e.target.value)}}/>
-                        <button className="send" onClick={handleReq} style={{marginRight:"10px"}}><img src="https://cdn-icons-png.flaticon.com/128/3608/3608124.png"/></button>
+                    <button className="send" onClick={handleReq} style={{marginRight:"10px"}}><img src="https://cdn-icons-png.flaticon.com/128/3608/3608124.png"/></button>
                     </div>
                     <p >powerstone may produce inaccurate information About Person,Place or Facts.DynamicFlow V-1.3 January 2024</p>
                 </div>
