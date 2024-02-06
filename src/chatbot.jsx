@@ -115,7 +115,7 @@ function Chatbot()
                </div>
            </div>
             <div className="mainn">
-            <Link to="/user">  <button style={{border:"none",background:"transparent",position:"relative",left:"-260px",top:"30px",margin:"0"}}  id="bbb"  onClick={cancel}><img src="https://cdn-icons-png.flaticon.com/128/5735/5735775.png" style={{height:"40px"}}></img></button></Link>
+            <Link to="/user">  <button style={{border:"none",background:"transparent",position:"relative",left:"-260px",top:"30px",margin:"0"}}  id="bbb"  ><img src="https://cdn-icons-png.flaticon.com/128/5735/5735775.png" style={{height:"40px"}}></img></button></Link>
                 <div className="chats">
                     {message.map((mess, i) =>
                         <div key={i} className={mess.isbot ? "ch boo" : "ch"}>
