@@ -57,7 +57,7 @@ function Adminview() {
   return (
     <div className="adminview"  style={{ height: "100vh" }}>
       <Navadmin />
-      <div className="table-responsive" style={{ maxHeight: "90vh", overflowY: "auto" }}>
+      <div className="table-responsive" style={{ maxHeight: "85vh", overflowY: "auto" }}>
         <table className="table border shadow" style={{ opacity: "0.8" }}>
           <thead className="text-center">
             <tr>
