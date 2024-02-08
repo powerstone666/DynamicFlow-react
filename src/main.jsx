@@ -6,9 +6,9 @@ import {useState} from 'react';
 
 
 
-//export const server="https://dynamicflow.onrender.com/";
+export const server="https://dynamicflow.onrender.com/";
 
-export const server="https://dynamicflow.bytebreeze.xyz/";
+//export const server="https://dynamicflow.bytebreeze.xyz/";
 
 //export const server="http://localhost:5000/";
 
