@@ -40,7 +40,7 @@ function About()
            <h3><span><img src=" https://cdn-icons-png.flaticon.com/128/1051/1051275.png"  style={{cursor:"pointer",height:"50px",marginRight:"20px"}} id="hub"onClick={github} ></img></span><span><img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png"  style={{cursor:"pointer",height:"50px"}} id="lin" onClick={linked}></img></span></h3>
             </div>
             </div>
-            <div className="about">
+            {/*  <div className="about">
             <div className="left">
              <img src={jun} alt="myself" />
            </div>
@@ -52,7 +52,7 @@ function About()
            <h2>Gmail: junaidpandith085@gmail.com</h2>
            <h3><span><img src=" https://cdn-icons-png.flaticon.com/128/1051/1051275.png"  style={{cursor:"pointer",height:"50px",marginRight:"20px"}} id="hub"onClick={github} ></img></span><span><img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png"  style={{cursor:"pointer",height:"50px"}} id="lin" onClick={linked}></img></span></h3>
             </div>
-            </div>
+            </div>*/}
         </div>
         </>
     );
